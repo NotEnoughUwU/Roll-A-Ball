@@ -17,19 +17,19 @@ public class GroundTilter : MonoBehaviour
     {
         if (Input.GetKey("up"))
         {
-            rotateVector.x += 0.1f;
+            rotateVector.x += 0.07f;
         }
         if (Input.GetKey("down"))
         {
-            rotateVector.x -= 0.1f;
+            rotateVector.x -= 0.07f;
         }
         if (Input.GetKey("right"))
         {
-            rotateVector.z -= 0.1f;
+            rotateVector.z -= 0.07f;
         }
         if (Input.GetKey("left"))
         {
-            rotateVector.z += 0.1f;
+            rotateVector.z += 0.07f;
         }
     }
 

@@ -6,30 +6,18 @@ using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed = 0;
     public TextMeshProUGUI countText;
     public GameObject winTextObject;
 
     private Rigidbody rb;
     private int count;
-    private float movementX;
-    private float movementY;
 
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
         count = 0;
 
         SetCountText();
         winTextObject.SetActive(false);
-    }
-
-    void OnMove(InputValue movementValue)
-    {
-        Vector2 movementVector = movementValue.Get<Vector2>();
-
-        movementX = movementVector.x;
-        movementY = movementVector.y;
     }
 
     void SetCountText()
@@ -39,13 +27,6 @@ public class PlayerController : MonoBehaviour
         {
             winTextObject.SetActive(true);
         }
-    }
-
-    void FixedUpdate()
-    {
-        Vector3 movement = new Vector3(movementX, 0.0f, movementY);
-
-        rb.AddForce(movement * speed);
     }
 
     void OnTriggerEnter(Collider other)
@@ -60,6 +41,10 @@ public class PlayerController : MonoBehaviour
         else if (other.gameObject.CompareTag("Respawn"))
         {
             transform.position = new Vector3(0, 5, 0);
+        }
+        else if (other.gameObject.CompareTag("pushup"))
+        {
+            transform.position = new Vector3( transform.position.x, transform.position.y + 1, transform.position.z );
         }
     }
 }
