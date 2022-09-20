@@ -37,4 +37,10 @@ public class GroundTilter : MonoBehaviour
     {
         transform.eulerAngles = rotateVector;
     }
+
+    public void ResetRotation()
+    {
+        rotateVector = new Vector3(0, 0, 0);
+        transform.eulerAngles = rotateVector;
+    }
 }

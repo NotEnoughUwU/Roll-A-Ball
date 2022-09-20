@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
 {
     public TextMeshProUGUI countText;
     public GameObject winTextObject;
+    public GroundTilter PlayingField = new GroundTilter;
+    public int yMod = 1;
 
     private Rigidbody rb;
     private int count;
@@ -40,11 +42,12 @@ public class PlayerController : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("Respawn"))
         {
-            transform.position = new Vector3(0, 5, 0);
+            transform.position = new Vector3(-5, 8, 8);
+            GroundTilter.ResetRotation();
         }
         else if (other.gameObject.CompareTag("pushup"))
         {
-            transform.position = new Vector3( transform.position.x, transform.position.y + 1, transform.position.z );
+            transform.position = new Vector3( transform.position.x, transform.position.y + yMod, transform.position.z );
         }
     }
 }
