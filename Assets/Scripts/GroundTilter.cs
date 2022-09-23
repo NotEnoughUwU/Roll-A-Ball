@@ -7,6 +7,12 @@ public class GroundTilter : MonoBehaviour
     private Rigidbody rb;
     Vector3 rotateVector = new Vector3(0, 0, 0);
     Vector3 moveVector = new Vector3(0, 0, 0);
+    public static bool resetCheck = false;
+
+    bool upPressed = false;
+    bool downPressed = false;
+    bool leftPressed = false;
+    bool rightPressed = false;
 
     void Start()
     {
@@ -15,32 +21,73 @@ public class GroundTilter : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey("up"))
+        if (Input.GetKeyDown("up"))
         {
-            rotateVector.x += 0.07f;
+            upPressed = true;
         }
-        if (Input.GetKey("down"))
+        else if (Input.GetKeyUp("up"))
         {
-            rotateVector.x -= 0.07f;
+            upPressed = false;
         }
-        if (Input.GetKey("right"))
+        if (Input.GetKeyDown("down"))
         {
-            rotateVector.z -= 0.07f;
+            downPressed = true;
         }
-        if (Input.GetKey("left"))
+        else if (Input.GetKeyUp("down"))
         {
-            rotateVector.z += 0.07f;
+            downPressed = false;
+        }
+        if (Input.GetKeyDown("right"))
+        {
+            rightPressed = true;
+        }
+        else if (Input.GetKeyUp("right"))
+        {
+            rightPressed = false;
+        }
+        if (Input.GetKeyDown("left"))
+        {
+            leftPressed = true;
+        }
+        else if (Input.GetKeyUp("left"))
+        {
+            leftPressed = false;
+        }
+
+        if (resetCheck)
+        {
+            ResetRotation();
         }
     }
 
     void FixedUpdate()
     {
         transform.eulerAngles = rotateVector;
+
+        if (upPressed)
+        {
+            rotateVector.x += 0.5f;
+        }
+        if (downPressed)
+        {
+            rotateVector.x -= 0.5f;
+        }
+        if (rightPressed)
+        {
+            rotateVector.z -= 0.5f;
+        }
+        if (leftPressed)
+        {
+            rotateVector.z += 0.5f;
+        }
     }
 
-    public void ResetRotation()
+    void ResetRotation()
     {
+        moveVector = new Vector3(0, 0, -8);
         rotateVector = new Vector3(0, 0, 0);
         transform.eulerAngles = rotateVector;
+        transform.position = moveVector;
+        resetCheck = false;
     }
 }

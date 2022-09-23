@@ -8,7 +8,8 @@ public class PlayerController : MonoBehaviour
 {
     public TextMeshProUGUI countText;
     public GameObject winTextObject;
-    public GroundTilter PlayingField = new GroundTilter;
+    public Transform fieldTransform;
+    public GroundTilter PlayingField;
     public int yMod = 1;
 
     private Rigidbody rb;
@@ -25,7 +26,7 @@ public class PlayerController : MonoBehaviour
     void SetCountText()
     {
         countText.text = "Count: " + count.ToString();
-        if(count >= 13) 
+        if(count >= 22) 
         {
             winTextObject.SetActive(true);
         }
@@ -42,8 +43,12 @@ public class PlayerController : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("Respawn"))
         {
+            GetComponent<Rigidbody>().Sleep();
+            GroundTilter.resetCheck = true;
+            transform.SetParent(null);
+            transform.eulerAngles = new Vector3(0, 0, 0);
             transform.position = new Vector3(-5, 8, 8);
-            GroundTilter.ResetRotation();
+            transform.SetParent(fieldTransform, false);
         }
         else if (other.gameObject.CompareTag("pushup"))
         {
