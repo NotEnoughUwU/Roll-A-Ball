@@ -66,19 +66,19 @@ public class GroundTilter : MonoBehaviour
 
         if (upPressed)
         {
-            rotateVector.x += 0.5f;
+            rotateVector.x += 0.8f;
         }
         if (downPressed)
         {
-            rotateVector.x -= 0.5f;
+            rotateVector.x -= 0.8f;
         }
         if (rightPressed)
         {
-            rotateVector.z -= 0.5f;
+            rotateVector.z -= 0.8f;
         }
         if (leftPressed)
         {
-            rotateVector.z += 0.5f;
+            rotateVector.z += 0.8f;
         }
     }
 
