@@ -44,12 +44,12 @@ public class CameraController : MonoBehaviour
     {
         if (rotateLeftCheck)
         {
-            transform.RotateAround(player.transform.position, Vector3.up, -5);
+            transform.RotateAround(player.transform.position, Vector3.up, -2.5f);
             offset = transform.position - player.transform.position;
         }
         if (rotateRightCheck)
         {
-            transform.RotateAround(player.transform.position, Vector3.up, 5);
+            transform.RotateAround(player.transform.position, Vector3.up, 2.5f);
             offset = transform.position - player.transform.position;
         }
     }

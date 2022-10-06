@@ -7,11 +7,10 @@ public class ExitBox : MonoBehaviour
     public bool unlocked;
     public Material unlockedMaterial;
 
-    void update()
+    void Update()
     {
-        if (unlocked)
+        if (unlocked && GetComponent<MeshRenderer>().material != unlockedMaterial)
         {
-            Debug.Log("cock");
             GetComponent<MeshRenderer>().material = unlockedMaterial;
         }
     }

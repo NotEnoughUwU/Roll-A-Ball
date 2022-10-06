@@ -11,6 +11,9 @@ public class PlayerController : MonoBehaviour
     public Transform fieldTransform;
     public GroundTilter PlayingField;
     public ExitBox exitBox;
+    public Material unlockedMaterial;
+    public GameObject Key;
+
     public int yMod = 1;
 
     private Rigidbody rb;
@@ -27,9 +30,9 @@ public class PlayerController : MonoBehaviour
     void SetCountText()
     {
         countText.text = "Count: " + count.ToString();
-        if(count >= 1) 
+        if(count >= 14)
         {
-            //winTextObject.SetActive(true);
+            Key.SetActive(true);
             exitBox.unlocked = true;
         }
     }
@@ -39,7 +42,7 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("PickUp"))
         {
             other.gameObject.SetActive(false);
-            count = count + 1;
+            count++;
 
             SetCountText();
         }
@@ -49,12 +52,20 @@ public class PlayerController : MonoBehaviour
             GroundTilter.resetCheck = true;
             transform.SetParent(null);
             transform.eulerAngles = new Vector3(0, 0, 0);
-            transform.position = new Vector3(-5, 8, 8);
+            transform.position = new Vector3(0.5f, 8, -15);
             transform.SetParent(fieldTransform, false);
         }
         else if (other.gameObject.CompareTag("pushup"))
         {
             transform.position = new Vector3( transform.position.x, transform.position.y + yMod, transform.position.z );
+        }
+        else if (other.gameObject.CompareTag("exit"))
+        {
+            if (exitBox.unlocked)
+            {
+                other.gameObject.SetActive(false);
+                winTextObject.SetActive(true);
+            }
         }
     }
 }

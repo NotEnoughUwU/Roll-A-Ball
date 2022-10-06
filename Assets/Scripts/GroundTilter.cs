@@ -21,35 +21,35 @@ public class GroundTilter : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown("up") || Input.GetKeyDown("w"))
+        if (Input.GetKeyDown("w"))
         {
             upPressed = true;
         }
-        else if (Input.GetKeyUp("up") || Input.GetKeyUp("w"))
+        else if (Input.GetKeyUp("w"))
         {
             upPressed = false;
         }
-        if (Input.GetKeyDown("down") || Input.GetKeyDown("s"))
+        if (Input.GetKeyDown("s"))
         {
             downPressed = true;
         }
-        else if (Input.GetKeyUp("down") || Input.GetKeyUp("s"))
+        else if (Input.GetKeyUp("s"))
         {
             downPressed = false;
         }
-        if (Input.GetKeyDown("right") || Input.GetKeyDown("d"))
+        if (Input.GetKeyDown("d"))
         {
             rightPressed = true;
         }
-        else if (Input.GetKeyUp("right") || Input.GetKeyUp("d"))
+        else if (Input.GetKeyUp("d"))
         {
             rightPressed = false;
         }
-        if (Input.GetKeyDown("left") || Input.GetKeyDown("a"))
+        if (Input.GetKeyDown("a"))
         {
             leftPressed = true;
         }
-        else if (Input.GetKeyUp("left") || Input.GetKeyUp("a"))
+        else if (Input.GetKeyUp("a"))
         {
             leftPressed = false;
         }

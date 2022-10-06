@@ -6,6 +6,7 @@ TagManager:
   tags:
   - PickUp
   - pushup
+  - exit
   layers:
   - Default
   - TransparentFX
