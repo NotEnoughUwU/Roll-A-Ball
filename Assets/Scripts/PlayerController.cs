@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public GameObject winTextObject;
     public Transform fieldTransform;
     public GroundTilter PlayingField;
+    public ExitBox exitBox;
     public int yMod = 1;
 
     private Rigidbody rb;
@@ -26,9 +27,10 @@ public class PlayerController : MonoBehaviour
     void SetCountText()
     {
         countText.text = "Count: " + count.ToString();
-        if(count >= 22) 
+        if(count >= 1) 
         {
-            winTextObject.SetActive(true);
+            //winTextObject.SetActive(true);
+            exitBox.unlocked = true;
         }
     }
 

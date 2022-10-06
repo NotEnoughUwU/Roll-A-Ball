@@ -129,4 +129,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   countText: {fileID: 0}
   winTextObject: {fileID: 0}
+  fieldTransform: {fileID: 0}
+  PlayingField: {fileID: 0}
   yMod: 100

@@ -21,35 +21,35 @@ public class GroundTilter : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown("up"))
+        if (Input.GetKeyDown("up") || Input.GetKeyDown("w"))
         {
             upPressed = true;
         }
-        else if (Input.GetKeyUp("up"))
+        else if (Input.GetKeyUp("up") || Input.GetKeyUp("w"))
         {
             upPressed = false;
         }
-        if (Input.GetKeyDown("down"))
+        if (Input.GetKeyDown("down") || Input.GetKeyDown("s"))
         {
             downPressed = true;
         }
-        else if (Input.GetKeyUp("down"))
+        else if (Input.GetKeyUp("down") || Input.GetKeyUp("s"))
         {
             downPressed = false;
         }
-        if (Input.GetKeyDown("right"))
+        if (Input.GetKeyDown("right") || Input.GetKeyDown("d"))
         {
             rightPressed = true;
         }
-        else if (Input.GetKeyUp("right"))
+        else if (Input.GetKeyUp("right") || Input.GetKeyUp("d"))
         {
             rightPressed = false;
         }
-        if (Input.GetKeyDown("left"))
+        if (Input.GetKeyDown("left") || Input.GetKeyDown("a"))
         {
             leftPressed = true;
         }
-        else if (Input.GetKeyUp("left"))
+        else if (Input.GetKeyUp("left") || Input.GetKeyUp("a"))
         {
             leftPressed = false;
         }
@@ -62,23 +62,29 @@ public class GroundTilter : MonoBehaviour
 
     void FixedUpdate()
     {
-        transform.eulerAngles = rotateVector;
+        //transform.eulerAngles = rotateVector;
 
         if (upPressed)
         {
-            rotateVector.x += 0.8f;
+            //rotateVector.x += 0.8f;
+            transform.Rotate(Camera.main.transform.right, 1, Space.World);
         }
         if (downPressed)
         {
-            rotateVector.x -= 0.8f;
+            //rotateVector.x -= 0.8f;
+            transform.Rotate(Camera.main.transform.right, -1, Space.World);
         }
         if (rightPressed)
         {
-            rotateVector.z -= 0.8f;
+            //rotateVector.z -= 0.8f;
+            transform.Rotate(Camera.main.transform.forward, -0.5f, Space.World);
+            transform.Rotate(Camera.main.transform.up, -0.5f, Space.World);
         }
         if (leftPressed)
         {
-            rotateVector.z += 0.8f;
+            //rotateVector.z += 0.8f;
+            transform.Rotate(Camera.main.transform.forward, 0.5f, Space.World);
+            transform.Rotate(Camera.main.transform.up, 0.5f, Space.World);
         }
     }
 
