@@ -14,10 +14,8 @@ public class GroundTilter : MonoBehaviour
     bool leftPressed = false;
     bool rightPressed = false;
 
-    void Start()
-    {
-        
-    }
+    public string leftTilt;
+    public string rightTilt;
 
     void Update()
     {
@@ -37,19 +35,19 @@ public class GroundTilter : MonoBehaviour
         {
             downPressed = false;
         }
-        if (Input.GetKeyDown("d"))
+        if (Input.GetKeyDown(rightTilt))
         {
             rightPressed = true;
         }
-        else if (Input.GetKeyUp("d"))
+        else if (Input.GetKeyUp(rightTilt))
         {
             rightPressed = false;
         }
-        if (Input.GetKeyDown("a"))
+        if (Input.GetKeyDown(leftTilt))
         {
             leftPressed = true;
         }
-        else if (Input.GetKeyUp("a"))
+        else if (Input.GetKeyUp(leftTilt))
         {
             leftPressed = false;
         }
