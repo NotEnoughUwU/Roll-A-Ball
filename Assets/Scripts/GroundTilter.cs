@@ -94,4 +94,18 @@ public class GroundTilter : MonoBehaviour
         transform.position = moveVector;
         resetCheck = false;
     }
+
+    public void InvertControls()
+    {
+        if (leftTilt == "a")
+        {
+            leftTilt = "d";
+            rightTilt = "a";
+        }
+        else if (leftTilt == "d")
+        {
+            leftTilt = "a";
+            rightTilt = "d";
+        }
+    }
 }

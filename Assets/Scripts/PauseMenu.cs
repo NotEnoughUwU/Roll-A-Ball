@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PauseMenu : MonoBehaviour
 {
-    bool isPaused;
 
     public GameObject Menu;
 
@@ -14,7 +13,7 @@ public class PauseMenu : MonoBehaviour
         Pause();
     }
 
-    public void Pause()
+    void Pause()
     {
         Time.timeScale = 0;
         Menu.SetActive(true);
@@ -24,5 +23,11 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 1;
         Menu.SetActive(false);
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown("return"))
+            Pause();
     }
 }
