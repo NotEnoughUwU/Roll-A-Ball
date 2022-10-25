@@ -1,13 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
     public TextMeshProUGUI countText;
-    public GameObject winTextObject;
     public Transform fieldTransform;
     public GroundTilter PlayingField;
     public ExitBox exitBox;
@@ -15,22 +14,25 @@ public class PlayerController : MonoBehaviour
     public GameObject Key;
 
     public int yMod = 1;
+    public int pickupCount;
 
-    private Rigidbody rb;
+    public float startX;
+    public float startY;
+    public float startZ;
+
     private int count;
 
     void Start()
     {
         count = 0;
-
+        transform.position = new Vector3(startX, startY, startZ);
         SetCountText();
-        winTextObject.SetActive(false);
     }
 
     void SetCountText()
     {
         countText.text = "Count: " + count.ToString();
-        if(count >= 14)
+        if(count >= pickupCount)
         {
             Key.SetActive(true);
             exitBox.unlocked = true;
@@ -52,7 +54,7 @@ public class PlayerController : MonoBehaviour
             GroundTilter.resetCheck = true;
             transform.SetParent(null);
             transform.eulerAngles = new Vector3(0, 0, 0);
-            transform.position = new Vector3(0.5f, 8, -15);
+            transform.position = new Vector3(startX, startY, startZ);
             transform.SetParent(fieldTransform, false);
         }
         else if (other.gameObject.CompareTag("pushup"))
@@ -64,7 +66,7 @@ public class PlayerController : MonoBehaviour
             if (exitBox.unlocked)
             {
                 other.gameObject.SetActive(false);
-                winTextObject.SetActive(true);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
         }
     }

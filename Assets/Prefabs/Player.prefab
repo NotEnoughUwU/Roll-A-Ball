@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4448322284964954518}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -128,7 +128,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countText: {fileID: 0}
-  winTextObject: {fileID: 0}
   fieldTransform: {fileID: 0}
   PlayingField: {fileID: 0}
+  exitBox: {fileID: 0}
+  unlockedMaterial: {fileID: 0}
+  Key: {fileID: 0}
   yMod: 100
+  pickupCount: 0
+  startX: 0
+  startY: 0
+  startZ: 0
