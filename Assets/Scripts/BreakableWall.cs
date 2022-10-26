@@ -9,9 +9,11 @@ public class BreakableWall : MonoBehaviour
     public Rigidbody wallPiece3;
     public Rigidbody wallPiece4;
     public Rigidbody wallPiece5;
+    public BoxCollider boxCollider;
 
     void BreakApart()
     {
+        boxCollider.enabled = false;
         wallPiece1.isKinematic = false;
         wallPiece2.isKinematic = false;
         wallPiece3.isKinematic = false;
