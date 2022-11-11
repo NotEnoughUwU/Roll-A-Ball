@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     public float startY;
     public float startZ;
 
-    private int count;
+    public int count;
 
     void Start()
     {
@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
         SetCountText();
     }
 
-    void SetCountText()
+    public void SetCountText()
     {
         countText.text = "Count: " + count.ToString();
         if(count >= pickupCount)
@@ -41,14 +41,7 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("PickUp"))
-        {
-            other.gameObject.SetActive(false);
-            count++;
-
-            SetCountText();
-        }
-        else if (other.gameObject.CompareTag("Respawn"))
+        if (other.gameObject.CompareTag("Respawn"))
         {
             GetComponent<Rigidbody>().Sleep();
             GroundTilter.resetCheck = true;

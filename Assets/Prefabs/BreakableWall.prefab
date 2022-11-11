@@ -83,9 +83,10 @@ GameObject:
   - component: {fileID: 7416019695493662815}
   - component: {fileID: 7839044376886377228}
   - component: {fileID: 1817782309801219112}
+  - component: {fileID: 3982858370566358345}
   m_Layer: 0
   m_Name: Cube (2)
-  m_TagString: Untagged
+  m_TagString: WallChunk
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -822,6 +823,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &3982858370566358345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1861149501715275534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 761d164a03269724d92f3028c6f50619, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Self: {fileID: 1861149501715275534}
 --- !u!1 &3909360489553409417
 GameObject:
   m_ObjectHideFlags: 0
@@ -836,9 +850,10 @@ GameObject:
   - component: {fileID: 1304919483795368158}
   - component: {fileID: 7301345886168268003}
   - component: {fileID: 1358270353385196631}
+  - component: {fileID: 2751722670076962135}
   m_Layer: 0
   m_Name: Cube (4)
-  m_TagString: Untagged
+  m_TagString: WallChunk
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1455,6 +1470,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2751722670076962135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3909360489553409417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 761d164a03269724d92f3028c6f50619, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Self: {fileID: 3909360489553409417}
 --- !u!1 &4286798145876753157
 GameObject:
   m_ObjectHideFlags: 0
@@ -1469,9 +1497,10 @@ GameObject:
   - component: {fileID: 9136082494241421936}
   - component: {fileID: 1343590742673565594}
   - component: {fileID: 6048563302058015191}
+  - component: {fileID: 4862047959820627535}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: exit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2192,6 +2221,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &4862047959820627535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4286798145876753157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 761d164a03269724d92f3028c6f50619, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Self: {fileID: 4286798145876753157}
 --- !u!1 &5435323645989786536
 GameObject:
   m_ObjectHideFlags: 0
@@ -2206,9 +2248,10 @@ GameObject:
   - component: {fileID: 6348109263622236836}
   - component: {fileID: 1382325385395368938}
   - component: {fileID: 8944849495218308780}
+  - component: {fileID: 5629286788042466442}
   m_Layer: 0
   m_Name: Cube (3)
-  m_TagString: Untagged
+  m_TagString: WallChunk
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2728,6 +2771,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &5629286788042466442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5435323645989786536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 761d164a03269724d92f3028c6f50619, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Self: {fileID: 5435323645989786536}
 --- !u!1 &5550568773945856104
 GameObject:
   m_ObjectHideFlags: 0
@@ -2743,9 +2799,10 @@ GameObject:
   - component: {fileID: 8968613230397191073}
   - component: {fileID: 8887031345078627663}
   - component: {fileID: 5610472022056189221}
+  - component: {fileID: 8625366350390376140}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: Untagged
+  m_TagString: WallChunk
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4844,7 +4901,7 @@ MeshRenderer:
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
+  m_SelectedEditorRenderState: 2
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -4891,3 +4948,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8625366350390376140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5550568773945856104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 761d164a03269724d92f3028c6f50619, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Self: {fileID: 5550568773945856104}

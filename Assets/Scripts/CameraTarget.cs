@@ -15,8 +15,6 @@ public class CameraTarget : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(Field.eulerAngles.x);
-
         float amountToMove = Field.eulerAngles.x;
         if (amountToMove > 180)
         {

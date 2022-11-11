@@ -130,11 +130,12 @@ MonoBehaviour:
   countText: {fileID: 0}
   fieldTransform: {fileID: 0}
   PlayingField: {fileID: 0}
-  exitBox: {fileID: 0}
-  unlockedMaterial: {fileID: 0}
+  exitBox: {fileID: 3494053711798639763, guid: 56dc0b6e95affc34d9b33cd6eaa3a83c, type: 3}
+  unlockedMaterial: {fileID: 2100000, guid: 50a56486ecf706e4a82bc6e7ac662721, type: 2}
   Key: {fileID: 0}
   yMod: 100
   pickupCount: 0
   startX: 0
   startY: 0
   startZ: 0
+  count: 1
