@@ -29,7 +29,7 @@ public class PauseMenu : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown("return"))
+        if (Input.GetKeyDown("return") || Input.GetKeyDown("escape"))
         {
             if (isPaused)
                 Unpause();

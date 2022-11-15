@@ -27,6 +27,12 @@ public class PickUp : MonoBehaviour
             Player.count++;
             Player.SetCountText();
 
+            if (Player.remaining > 0)
+            {
+                Player.remaining--;
+                Player.SetRemainingText();
+            }
+
             Self.SetActive(false);
         }
     }

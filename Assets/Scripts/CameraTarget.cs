@@ -6,7 +6,7 @@ public class CameraTarget : MonoBehaviour
 {
     public Transform Field;
 
-    Vector3 BasePos;
+    public Vector3 BasePos;
 
     void Start()
     {
