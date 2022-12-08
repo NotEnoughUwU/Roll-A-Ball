@@ -114,6 +114,8 @@ MonoBehaviour:
   Player: {fileID: 0}
   Self: {fileID: 336277709497240270}
   PlayerObj: {fileID: 0}
+  Particle: {fileID: 2367966648169179047, guid: 195442dbf329e0d429debf4058e51864,
+    type: 3}
 --- !u!54 &-7882046931712521051
 Rigidbody:
   m_ObjectHideFlags: 0

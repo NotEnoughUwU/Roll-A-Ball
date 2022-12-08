@@ -7,10 +7,13 @@ public class PickUp : MonoBehaviour
     public PlayerController Player;
     public GameObject Self;
     public GameObject PlayerObj;
+    public GameObject Particle;
+    public Transform PickUpParent;
 
     void Start()
     {
         PlayerObj = GameObject.Find("Player");
+        PickUpParent = GameObject.Find("PickUp Parent").transform;
         Player = PlayerObj.GetComponent<PlayerController>();
     }
 
@@ -33,6 +36,8 @@ public class PickUp : MonoBehaviour
                 Player.SetRemainingText();
             }
 
+            GameObject particleInstance = Instantiate(Particle, transform);
+            particleInstance.transform.SetParent(PickUpParent, true);
             Self.SetActive(false);
         }
     }
